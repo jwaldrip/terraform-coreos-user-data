@@ -38,7 +38,7 @@ resource "template_file" "flannel_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
-    service = "flannel"
+    service = "flanneld"
     enabled = "${var.enable_flannel}"
   }
 }
