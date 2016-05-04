@@ -52,7 +52,7 @@ resource "template_file" "flannel" {
     etcd-prefix     = "${var.flannel_etcd-prefix}"
     etcd-keyfile    = "${coalesce(var.flannel_etcd-keyfile, var.etcd2_key-file)}"
     etcd-certfile   = "${coalesce(var.flannel_etcd-certfile, var.etcd2_cert-file)}"
-    interface           = "${var.flannel_interface}"
+    interface       = "${var.flannel_interface}"
     subnet-file     = "${var.flannel_subnet-file}"
     ip-masq         = "${var.flannel_ip-masq}"
   }

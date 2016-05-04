@@ -118,9 +118,9 @@ name                                | default       | description
 enable_fleet                        | "true"        | Enable Fleet
 fleet_agent_ttl                     | "30s"         | An Agent will be considered dead if it exceeds this amount of time to communicate with the Registry. The agent will attempt a heartbeat at half of this value.
 fleet_engine_reconcile_interval     | "2"           | Interval in seconds at which the engine should reconcile the cluster schedule in etcd.
-fleet_etcd_certfile                 | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints
+fleet_etcd_certfile                 | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
 fleet_etcd_key_prefix               | "/\_coreos.com/fleet/" | Keyspace path for fleet data in etcd.
-fleet_etcd_keyfile                  | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints
+fleet_etcd_keyfile                  | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
 fleet_etcd_request_timeout          | "1.0"         | Amount of time in seconds to allow a single etcd request before considering it failed.
 fleet_etcd_servers                  | "http://127.0.0.1:2379,http://127.0.0.1:4001" | Provide a custom set of etcd endpoints.
 fleet_metadata                      | ""            | Comma-delimited key/value pairs that are published with the local to the fleet registry. This data can be used directly by a client of fleet to make scheduling decisions. <br /> ex: `"region=us-west,az=us-west-1"`
@@ -131,21 +131,23 @@ fleet_verbosity                     | "0"           | Enable debug logging by se
 #### Flannel
 name                                | default       | description
 ------------------------------------|---------------|------------
-enable_flannel                      | "true"        |
-flannel_etcd-certfile               | ""            |
-flannel_etcd-endpoints              | ""            |
-flannel_etcd-keyfile                | ""            |
-flannel_etcd-prefix                 | ""            |
-flannel_interface                   | ""            |
-flannel_ip-masq                     | ""            |
+enable_flannel                      | "true"        | Enable flannel
+flannel_etcd-certfile               | ""            | Path to certificate file used for TLS communication with etcd.
+flannel_etcd-endpoints              | "http://127.0.0.1:2379,http://127.0.0.1:4001" | Provide a custom set of etcd endpoints.
+flannel_etcd-keyfile                | ""            | Path to private key file used for TLS communication with etcd.
+flannel_etcd-prefix                 | "/coreos.com/network" | etcd prefix path to be used for flannel keys.
+flannel_interface                   | ""            | Interface (name or IP) that should be used for inter-host communication.
+flannel_ip-masq                     | ""            | Install IP masquerade rules for traffic outside of flannel subnet.
+flannel_public-ip                   | ""            | IP accessible by other nodes for inter-host communication
+flannel_subnet-file                 | "/run/flannel/subnet.env" | filename where env variables (subnet and MTU values) will be written to.
 
 #### Locksmith
 name                                | default       | description
 ------------------------------------|---------------|------------
 enable_locksmith                    | "true"        |
 locksmith_endpoint                  | ""            |
-locksmith_etcd-certfile             | ""            |
-locksmith_etcd-keyfile              | ""            |
+locksmith_etcd-certfile             | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
+locksmith_etcd-keyfile              | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
 locksmith_group                     | ""            |
 
 #### Update Service
