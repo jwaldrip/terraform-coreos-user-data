@@ -1,0 +1,2 @@
+#cloud-config
+${replace(replace(preformatted-user-data, "var!", "$"), "/\n\s+\n/", "\n")}

@@ -1,0 +1,4 @@
+update:
+  ${replace(reboot-strategy, "/^.+$/", "reboot-strategy: '${reboot-strategy}'")}
+  ${replace(server, "/^.+$/", "server: '${server}'")}
+  ${replace(group, "/^.+$/", "group: '${group}'")}

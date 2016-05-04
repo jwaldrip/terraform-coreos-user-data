@@ -1,0 +1,5 @@
+locksmith:
+  ${replace(endpoint, "/^.+$/", "endpoint: '${endpoint}'")}
+  ${replace(etcd-keyfile, "/^.+$/", "etcd-keyfile: '${etcd-keyfile}'")}
+  ${replace(etcd-certfile, "/^.+$/", "etcd-certfile: '${etcd-certfile}'")}
+  ${replace(group, "/^.+$/", "group: '${group}'")}

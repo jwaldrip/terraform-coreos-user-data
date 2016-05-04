@@ -1,0 +1,9 @@
+language: bash
+
+before_script:
+  - apt-get install unzip
+  - wget https://releases.hashicorp.com/terraform/0.6.15/terraform_0.6.15_linux_amd64.zip
+  - unzip terraform_0.6.15_linux_amd64.zip
+  - cp terraform_0.6.15_linux_amd64/* /usr/local/bin/
+script:
+  - terraform apply -input=false -var-file vars.tfvars

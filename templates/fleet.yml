@@ -1,0 +1,11 @@
+fleet:
+  ${replace(verbosity, "/^.+$/", "verbosity: ${verbosity}")}
+  ${replace(etcd_servers, "/^.+$/", "etcd_servers: '${etcd_servers}'")}
+  ${replace(etcd_request_timeout, "/^.+$/", "etcd_request_timeout: ${etcd_request_timeout}")}
+  ${replace(etcd_keyfile, "/^.+$/", "etcd_keyfile: '${etcd_keyfile}'")}
+  ${replace(etcd_certfile, "/^.+$/", "etcd_certfile: '${etcd_certfile}'")}
+  ${replace(etcd_key_prefix, "/^.+$/", "etcd_key_prefix: '${etcd_key_prefix}'")}
+  ${replace(public_ip, "/^.+$/", "public_ip: '${public_ip}'")}
+  ${replace(metadata, "/^.+$/", "metadata: '${metadata}'")}
+  ${replace(agent_ttl, "/^.+$/", "agent_ttl: '${agent_ttl}'")}
+  ${replace(engine_reconcile_interval, "/^.+$/", "engine_reconcile_interval: ${engine_reconcile_interval}")}

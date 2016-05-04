@@ -1,0 +1,1 @@
+${replace(hostname, "/^.+$/", "hostname: '${hostname}'")}

@@ -1,0 +1,1 @@
+${replace(manage_etc_hosts, "/^.+$/", "manage_etc_hosts: '${manage_etc_hosts}'")}

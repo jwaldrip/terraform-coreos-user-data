@@ -1,0 +1,2 @@
+write_files:
+  ${join("\n  ", split("\n", write_files))}

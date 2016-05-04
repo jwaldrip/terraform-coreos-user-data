@@ -1,0 +1,9 @@
+flannel:
+  ${replace(public-ip, "/^.+$/", "public-ip: '${public-ip}'")}
+  ${replace(etcd-endpoints, "/^.+$/", "etcd-endpoints: '${etcd-endpoints}'")}
+  ${replace(etcd-prefix, "/^.+$/", "etcd-prefix: '${etcd-prefix}'")}
+  ${replace(etcd-keyfile, "/^.+$/", "etcd-keyfile: '${etcd-keyfile}'")}
+  ${replace(etcd-certfile, "/^.+$/", "etcd-certfile: '${etcd-certfile}'")}
+  ${replace(interface, "/^.+$/", "interface: '${interface}'")}
+  ${replace(subnet-file, "/^.+$/", "subnet-file: '${subnet-file}'")}
+  ${replace(ip-masq, "/^.+$/", "ip-masq: '${ip-masq}'")}

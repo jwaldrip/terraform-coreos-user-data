@@ -1,0 +1,3 @@
+-
+    name: ${service}.service
+    ${replace(replace(enabled, "true", "command: start"), enabled, "mask: true")}

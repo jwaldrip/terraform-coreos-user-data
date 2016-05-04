@@ -1,0 +1,6 @@
+${replace(coreos, "/^\s*coreos:\s*$/", "")}
+${replace(ssh_authorized_keys, "/^\s*ssh_authorized_keys:\s*$/", "")}
+${replace(hostname, "/^\s*hostname:\s*$/", "")}
+${replace(users, "/^\s*users:\s*$/", "")}
+${replace(write_files, "/^\s*write_files:\s*$/", "")}
+${replace(manage_etc_hosts, "/^\s*manage_etc_hosts:\s*$/", "")}
