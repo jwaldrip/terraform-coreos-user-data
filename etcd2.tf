@@ -157,10 +157,6 @@ resource "template_file" "etcd2_unit" {
 resource "template_file" "etcd2" {
   template = "${file("${path.module}/templates/etcd2.yml")}"
 
-  provisioner "local-exec" {
-    command = "cat <<'__USERDATA__' > /dev/null\n${replace(replace(template_file.etcd2.rendered, "var!", "$"), "/\n\\s+\n/", "\n")}\n__USERDATA__"
-  }
-
   vars {
     name                        = "${var.etcd2_name}"
     data-dir                    = "${var.etcd2_data-dir}"

@@ -1,5 +1,7 @@
 # Terraform CoreOS UserData for CloudConfig
-A terraform module that allows for configuration for CoreOS using terraform
+[![Build Status](https://travis-ci.org/brandfolder/terraform-coreos-user-data.svg?branch=master)](https://travis-ci.org/brandfolder/terraform-coreos-user-data)
+
+Terraform module that allows for configuration for CoreOS using terraform
 variables. The result will be an output containing the user-data for use in
 provisioning instances with any provider. In addition, the package also
 validates the outputted user-data using a service hosted by the CoreOS team.
@@ -26,8 +28,7 @@ then use the output to gather the user-data file.
 ### Outputs
 name                      | description
 --------------------------|----------------------------
-`module.user-data`        | user-data as a string
-`module.user-data-base64` | base64 encoded user-data
+`module.user-data`        | user-data string
 
 ### Variables
 The following variables can be used to configure the user data.

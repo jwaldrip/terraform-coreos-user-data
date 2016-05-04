@@ -1,10 +1,6 @@
 resource "template_file" "coreos" {
   template = "${file("${path.module}/templates/coreos.yml")}"
 
-  provisioner "local-exec" {
-    command = "cat <<'__USERDATA__' > /dev/null\n${replace(replace(template_file.coreos.rendered, "var!", "$"), "/\n\\s+\n/", "\n")}\n__USERDATA__"
-  }
-
   vars {
     etcd2     = "${replace(replace("${var.enable_etcd2}", "true", template_file.etcd2.rendered), "/^var.enable_etcd2$/", "")}"
     fleet     = "${replace(replace("${var.enable_fleet}", "true", template_file.fleet.rendered), "/^vvar.enable_fleet$/", "")}"
