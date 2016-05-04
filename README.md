@@ -144,11 +144,11 @@ flannel_subnet-file                 | "/run/flannel/subnet.env" | filename where
 #### Locksmith
 name                                | default       | description
 ------------------------------------|---------------|------------
-enable_locksmith                    | "true"        |
-locksmith_endpoint                  | ""            |
+enable_locksmith                    | "true"        | Enable Locksmith
+locksmith_endpoint                  | "http://127.0.0.1:2379,http://127.0.0.1:4001" | Provide a custom set of etcd endpoints.
 locksmith_etcd-certfile             | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
 locksmith_etcd-keyfile              | ""            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
-locksmith_group                     | ""            |
+locksmith_group                     | "default"     | The groupname to check locks against.
 
 #### Update Service
 name                                | default       | description
