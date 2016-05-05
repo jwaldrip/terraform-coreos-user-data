@@ -1,5 +1,5 @@
 variable "hostname" {
-  default = ""
+  default = true
 }
 
 resource "template_file" "hostname" {

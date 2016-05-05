@@ -2,12 +2,11 @@ resource "template_file" "coreos" {
   template = "${file("${path.module}/templates/coreos.yml")}"
 
   vars {
-    etcd2     = "${replace(replace("${var.enable_etcd2}", "true", template_file.etcd2.rendered), "/^var.enable_etcd2$/", "")}"
-    fleet     = "${replace(replace("${var.enable_fleet}", "true", template_file.fleet.rendered), "/^vvar.enable_fleet$/", "")}"
-    flannel     = "${replace(replace("${var.enable_flannel}", "true", template_file.flannel.rendered), "/^vvar.enable_flannel$/", "")}"
-    locksmith     = "${replace(replace("${var.enable_locksmith}", "true", template_file.locksmith.rendered), "/^vvar.enable_locksmith$/", "")}"
-    update     = "${replace(replace("${var.enable_update}", "true", template_file.update.rendered), "/^vvar.enable_update$/", "")}"
-    etcd2     = "${replace(replace("${var.enable_etcd2}", "true", template_file.etcd2.rendered), "/^vvar.enable_etcd2$/", "")}"
+    etcd2     = "${replace(replace("${var.enable_etcd2}", "/^(true|1)$/", template_file.etcd2.rendered), "/^${var.enable_etcd2}$/", "")}"
+    fleet     = "${replace(replace("${var.enable_fleet}", "/^(true|1)$/", template_file.fleet.rendered), "/^${var.enable_fleet}$/", "")}"
+    flannel     = "${replace(replace("${var.enable_flannel}", "/^(true|1)$/", template_file.flannel.rendered), "/^${var.enable_flannel}$/", "")}"
+    locksmith     = "${replace(replace("${var.enable_locksmith}", "/^(true|1)$/", template_file.locksmith.rendered), "/^${var.enable_locksmith}$/", "")}"
+    update     = "${replace(replace("${var.enable_update}", "/^(true|1)$/", template_file.update.rendered), "/^${var.enable_update}$/", "")}"
     units     = "${template_file.units.rendered}"
   }
 }

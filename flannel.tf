@@ -1,5 +1,5 @@
 variable "enable_flannel" {
-  default = "true"
+  default = true
 }
 
 variable "flannel_public-ip" {

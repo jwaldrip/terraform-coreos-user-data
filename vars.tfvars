@@ -1,4 +1,3 @@
-enable_etcd2 = "true"
 enable_flannel = "true"
 enable_fleet = "true"
 enable_locksmith = "true"

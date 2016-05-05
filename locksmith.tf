@@ -1,5 +1,5 @@
 variable "enable_locksmith" {
-  default = "true"
+  default = true
 }
 
 variable "locksmith_reboot-strategy" {

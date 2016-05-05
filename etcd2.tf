@@ -1,7 +1,7 @@
 # etcd2 Configuration
 # Enable/Disable etcd2, when false, the remaining config options have no affect.
 variable "enable_etcd2" {
-  default = "true"
+  default = true
 }
 
 variable "etcd2_name" {

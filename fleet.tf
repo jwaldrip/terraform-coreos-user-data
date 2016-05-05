@@ -1,5 +1,5 @@
 variable "enable_fleet" {
-  default = "true"
+  default = true
 }
 
 variable "fleet_verbosity" {

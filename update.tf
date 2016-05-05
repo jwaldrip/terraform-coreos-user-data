@@ -1,5 +1,5 @@
 variable "enable_update" {
-  default = "true"
+  default = true
 }
 
 variable "update_reboot-strategy" {
