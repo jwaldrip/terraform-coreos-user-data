@@ -151,6 +151,7 @@ resource "template_file" "etcd2_unit" {
   vars {
     service = "etcd2"
     enabled = "${var.enable_etcd2}"
+    drop-ins = ""
   }
 }
 

@@ -28,6 +28,7 @@ resource "template_file" "locksmith_unit" {
   vars {
     service = "locksmithd"
     enabled = "${var.enable_locksmith}"
+    drop-ins = ""
   }
 }
 

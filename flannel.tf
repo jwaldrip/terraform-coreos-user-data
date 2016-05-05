@@ -34,12 +34,25 @@ variable "flannel_ip-masq" {
   default = ""
 }
 
+variable "flannel_config" {
+  default = "{ \"Network\": \"10.1.0.0/16\" }"
+}
+
+resource "template_file" "flannel_config" {
+  template = "${file("${path.module}/templates/flannel-config.yml")}"
+
+  vars {
+    config = "${var.flannel_config}"
+  }
+}
+
 resource "template_file" "flannel_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
     service = "flanneld"
     enabled = "${var.enable_flannel}"
+    drop-ins = "${template_file.flannel_config.rendered}"
   }
 }
 

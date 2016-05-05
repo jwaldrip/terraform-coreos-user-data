@@ -52,6 +52,7 @@ resource "template_file" "fleet_unit" {
   vars {
     service = "fleet"
     enabled = "${var.enable_fleet}"
+    drop-ins = ""
   }
 }
 

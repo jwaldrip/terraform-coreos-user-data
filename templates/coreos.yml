@@ -1,7 +1,7 @@
 coreos:
   ${replace(join("\n  ", split("\n", etcd2)), "/^\s*etcd2:\s*$/", "")}
-  ${replace(join("\n  ", split("\n", fleet)), "/^\s*fleet:\s*$/", "")}
   ${replace(join("\n  ", split("\n", flannel)), "/^\s*flannel:\s*$/", "")}
+  ${replace(join("\n  ", split("\n", fleet)), "/^\s*fleet:\s*$/", "")}
   ${replace(join("\n  ", split("\n", locksmith)), "/^\s*locksmith:\s*$/", "")}
   ${replace(join("\n  ", split("\n", update)), "/^\s*update:\s*$/", "")}
   ${replace(join("\n  ", split("\n", units)), "/^\s*units:\s*$/", "")}

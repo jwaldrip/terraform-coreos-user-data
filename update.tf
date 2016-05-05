@@ -20,6 +20,7 @@ resource "template_file" "update_unit" {
   vars {
     service = "update-engine"
     enabled = "${var.enable_update}"
+    drop-ins = ""
   }
 }
 
