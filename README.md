@@ -12,18 +12,18 @@ validates the outputted user-data using a service hosted by the CoreOS team.
 To use the module, include it in your project and assign the variables. You can
 then use the output to gather the user-data file.
 
-*none*`
-  module "coreos-config" {
-    source = "github.com/brandfolder/terraform-coreos-user-data"
-    var_1 = "value"
-  }
+```hcl
+module "coreos-config" {
+  source = "github.com/brandfolder/terraform-coreos-user-data"
+  var_1 = "value"
+}
 
-  resource "aws_instance" "web" {
-    ami = "ami-408c7f28"
-    instance_type = "t1.micro"
-    user_data = "${module.coreos-config.user-data}"
-  }
-*none*`
+resource "aws_instance" "web" {
+  ami = "ami-408c7f28"
+  instance_type = "t1.micro"
+  user_data = "${module.coreos-config.user-data}"
+}
+```
 
 ### Outputs
 name                      | description
