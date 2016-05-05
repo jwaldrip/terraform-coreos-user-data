@@ -1,4 +1,4 @@
 -
     name: ${service}.service
-    ${replace(replace(enabled, "true", "command: start"), enabled, "mask: true")}
+    ${replace(replace(enabled, "/^(true|1)$", "command: start"), enabled, "mask: true")}
     ${replace(drop-ins, "/^[\s\S]+$/", "drop-ins:\n      ${join("\n      ", split("\n", drop-ins))}")}

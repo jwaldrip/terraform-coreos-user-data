@@ -1,9 +1,5 @@
-variable "enable_update" {
-  default = true
-}
-
 variable "update_reboot-strategy" {
-  default = ""
+  default = "best-effort"
 }
 
 variable "update_group" {
@@ -12,16 +8,6 @@ variable "update_group" {
 
 variable "update_server" {
   default = ""
-}
-
-resource "template_file" "update_unit" {
-  template = "${file("${path.module}/templates/enabled-unit.yml")}"
-
-  vars {
-    service = "update-engine"
-    enabled = "${var.enable_update}"
-    drop-ins = ""
-  }
 }
 
 resource "template_file" "update" {

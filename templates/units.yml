@@ -3,5 +3,4 @@ units:
   ${flannel_unit}
   ${fleet_unit}
   ${locksmith_unit}
-  ${update_unit}
   ${join("\n  ", split("\n", units))}

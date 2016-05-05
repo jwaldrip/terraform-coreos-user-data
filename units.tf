@@ -11,7 +11,6 @@ resource "template_file" "units" {
     fleet_unit     = "${template_file.fleet_unit.rendered}"
     flannel_unit   = "${template_file.flannel_unit.rendered}"
     locksmith_unit = "${template_file.locksmith_unit.rendered}"
-    update_unit    = "${template_file.update_unit.rendered}"
     units          = "${var.units}"
   }
 }
