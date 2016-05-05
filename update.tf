@@ -18,7 +18,7 @@ resource "template_file" "update_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
-    service = "update-service"
+    service = "update-engine"
     enabled = "${var.enable_update}"
   }
 }
