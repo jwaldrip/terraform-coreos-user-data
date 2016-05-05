@@ -1,0 +1,5 @@
+-
+    name: 50-network-config.conf
+    content: |
+      [Service]
+      ExecStartPre=/usr/bin/etcdctl set /coreos.com/network/config '${config}'
