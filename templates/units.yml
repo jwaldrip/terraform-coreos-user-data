@@ -1,7 +1,7 @@
 units:
   ${etcd2_unit}
-  ${fleet_unit}
   ${flannel_unit}
+  ${fleet_unit}
   ${locksmith_unit}
   ${update_unit}
   ${join("\n  ", split("\n", units))}
