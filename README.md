@@ -28,7 +28,7 @@ resource "aws_instance" "web" {
 ### Systemd Variable Interpolation
 Terraform has an issue with interpolation of `$`. In order to get around that we do dynamic replacement of `var!` and replace it with `$`.  
 
-##### Example: 
+##### Example:
 `$public_ipv4` would be written as `var!public_ipv4`.
 
 ### Outputs
@@ -152,7 +152,6 @@ flannel_subnet-file                 | `/run/flannel/subnet.env` | filename where
 #### Locksmith
 name                                | default       | description
 ------------------------------------|---------------|------------
-enable_locksmith                    | `true`        | Enable Locksmith
 locksmith_endpoint                  | `http://127.0.0.1:2379,http://127.0.0.1:4001` | Provide a custom set of etcd endpoints.
 locksmith_etcd-certfile             | *none*            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.
 locksmith_etcd-keyfile              | *none*            | Provide TLS configuration when SSL certificate authentication is enabled in etcd endpoints.

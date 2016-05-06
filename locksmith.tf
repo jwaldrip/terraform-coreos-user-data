@@ -1,7 +1,3 @@
-variable "enable_locksmith" {
-  default = true
-}
-
 variable "locksmith_reboot-strategy" {
   default = "best-effort"
 }
@@ -20,16 +16,6 @@ variable "locksmith_etcd-certfile" {
 
 variable "locksmith_group" {
   default = ""
-}
-
-resource "template_file" "locksmith_unit" {
-  template = "${file("${path.module}/templates/enabled-unit.yml")}"
-
-  vars {
-    service = "locksmithd"
-    enabled = "${var.enable_locksmith}"
-    drop-ins = ""
-  }
 }
 
 resource "template_file" "locksmith" {
