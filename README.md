@@ -25,6 +25,12 @@ resource "aws_instance" "web" {
 }
 ```
 
+### Systemd Variable Interpolation
+Terraform has an issue with interpolation of `$`. In order to get around that we do dynamic replacement of `var!` and replace it with `$`.  
+
+##### Example: 
+`$public_ipv4` would be written as `var!public_ipv4`.
+
 ### Outputs
 name                      | description
 --------------------------|----------------------------
