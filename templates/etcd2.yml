@@ -32,5 +32,5 @@ etcd2:
   ${replace(peer-key-file, "/^.+$/", "peer-key-file: '${peer-key-file}'")}
   ${replace(peer-client-cert-auth, "/^.+$/", "peer-client-cert-auth: ${peer-client-cert-auth}")}
   ${replace(peer-trusted-ca-file, "/^.+$/", "peer-trusted-ca-file: '${peer-trusted-ca-file}'")}
-  ${replace(debug, "/^.+$/", "debug: ${debug}")}
+  ${replace(replace("${debug}", "/^(true|1)$/", "debug: true"), "/^debug$/", "")}
   ${replace(log-package-levels, "/^.+$/", "log-package-levels: '${log-package-levels}'")}
