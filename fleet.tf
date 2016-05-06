@@ -50,8 +50,8 @@ resource "template_file" "fleet_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
-    service = "fleet"
-    enabled = "${var.enable_fleet}"
+    service  = "fleet"
+    enabled  = "${var.enable_fleet}"
     drop-ins = ""
   }
 }

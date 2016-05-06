@@ -149,8 +149,8 @@ resource "template_file" "etcd2_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
-    service = "etcd2"
-    enabled = "${var.enable_etcd2}"
+    service  = "etcd2"
+    enabled  = "${var.enable_etcd2}"
     drop-ins = ""
   }
 }
@@ -162,7 +162,7 @@ resource "template_file" "etcd2" {
     name                        = "${var.etcd2_name}"
     data-dir                    = "${var.etcd2_data-dir}"
     snapshot-count              = "${var.etcd2_snapshot-count}"
-    heartbeat-interval           = "${var.etcd2_heartbeat-interval}"
+    heartbeat-interval          = "${var.etcd2_heartbeat-interval}"
     election-timeout            = "${var.etcd2_election-timeout}"
     listen-peer-urls            = "${var.etcd2_listen-peer-urls}"
     listen-client-urls          = "${var.etcd2_listen-client-urls}"
