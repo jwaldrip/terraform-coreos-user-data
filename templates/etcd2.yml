@@ -18,7 +18,7 @@ etcd2:
   ${replace(discovery-srv, "/^.+$/", "discovery-srv: '${discovery-srv}'")}
   ${replace(discovery-fallback, "/^.+$/", "discovery-fallback: '${discovery-fallback}'")}
   ${replace(discovery-proxy, "/^.+$/", "discovery-proxy: '${discovery-proxy}'")}
-  ${replace(proxy, "/^.+$/", "proxy: ${proxy}")}
+  ${replace(proxy, "/^.+$/", "proxy: '${proxy}'")}
   ${replace(proxy-failure-wait, "/^.+$/", "proxy-failure-wait: ${proxy-failure-wait}")}
   ${replace(proxy-refresh-interval, "/^.+$/", "proxy-refresh-interval: ${proxy-refresh-interval}")}
   ${replace(proxy-dial-timeout, "/^.+$/", "proxy-dial-timeout: ${proxy-dial-timeout}")}
@@ -26,11 +26,11 @@ etcd2:
   ${replace(proxy-read-timeout, "/^.+$/", "proxy-read-timeout: ${proxy-read-timeout}")}
   ${replace(cert-file, "/^.+$/", "cert-file: '${cert-file}'")}
   ${replace(key-file, "/^.+$/", "key-file: '${key-file}'")}
-  ${replace(client-cert-auth, "/^.+$/", "client-cert-auth: ${client-cert-auth}")}
+  ${replace(replace("${client-cert-auth}", "/^(true|1)$/", "client-cert-auth: true"), "/^${client-cert-auth}$/", "")}
   ${replace(trusted-ca-file, "/^.+$/", "trusted-ca-file: '${trusted-ca-file}'")}
   ${replace(peer-cert-file, "/^.+$/", "peer-cert-file: '${peer-cert-file}'")}
   ${replace(peer-key-file, "/^.+$/", "peer-key-file: '${peer-key-file}'")}
-  ${replace(peer-client-cert-auth, "/^.+$/", "peer-client-cert-auth: ${peer-client-cert-auth}")}
+  ${replace(replace("${peer-client-cert-auth}", "/^(true|1)$/", "peer-client-cert-auth: true"), "/^${peer-client-cert-auth}$/", "")}
   ${replace(peer-trusted-ca-file, "/^.+$/", "peer-trusted-ca-file: '${peer-trusted-ca-file}'")}
-  ${replace(replace("${debug}", "/^(true|1)$/", "debug: true"), "/^debug$/", "")}
+  ${replace(replace("${debug}", "/^(true|1)$/", "debug: true"), "/^${debug}$/", "")}
   ${replace(log-package-levels, "/^.+$/", "log-package-levels: '${log-package-levels}'")}
