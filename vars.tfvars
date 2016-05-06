@@ -1,7 +1,7 @@
-enable_etcd2 = "true"
+/*enable_etcd2 = "true"
 enable_flannel = "true"
 enable_fleet = "true"
-enable_locksmith = "true"
+enable_locksmith = "true"*/
 
 etcd2_advertise-client-urls = "value"
 etcd2_cert-file = "value"
