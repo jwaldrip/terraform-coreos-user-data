@@ -1,4 +1,7 @@
 units:
+  - # Ensure old version etcd is always masked
+    name: etcd.service
+    mask: true
   ${etcd2_unit}
   ${flannel_unit}
   ${fleet_unit}
