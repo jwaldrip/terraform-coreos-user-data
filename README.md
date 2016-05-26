@@ -1,5 +1,5 @@
 # Terraform CoreOS UserData for CloudConfig
-[![Build Status](https://travis-ci.org/brandfolder/terraform-coreos-user-data.svg?branch=master)](https://travis-ci.org/brandfolder/terraform-coreos-user-data)
+![](https://img.shields.io/badge/licence-MIT-blue.svg) [![Build Status](https://travis-ci.org/brandfolder/terraform-coreos-user-data.svg?branch=master)](https://travis-ci.org/brandfolder/terraform-coreos-user-data)
 
 Terraform module that allows for configuration for CoreOS using terraform
 variables. The result will be an output containing the user-data for use in
