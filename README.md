@@ -1,5 +1,5 @@
 # Terraform CoreOS UserData for CloudConfig
-![](https://img.shields.io/badge/licence-MIT-blue.svg) [![Build Status](https://travis-ci.org/brandfolder/terraform-coreos-user-data.svg?branch=master)](https://travis-ci.org/brandfolder/terraform-coreos-user-data)
+![](https://img.shields.io/badge/licence-MIT-blue.svg) [![Build Status](https://travis-ci.org/jwaldrip/terraform-coreos-user-data.svg?branch=master)](https://travis-ci.org/jwaldrip/terraform-coreos-user-data)
 
 Terraform module that allows for configuration for CoreOS using terraform
 variables. The result will be an output containing the user-data for use in
@@ -14,7 +14,7 @@ then use the output to gather the user-data file.
 
 ```hcl
 module "coreos-config" {
-  source = "github.com/brandfolder/terraform-coreos-user-data"
+  source = "github.com/jwaldrip/terraform-coreos-user-data"
   var_1 = "value"
 }
 
