@@ -2,8 +2,8 @@ language: bash
 sudo: true
 before_script:
   - sudo apt-get install unzip
-  - wget https://releases.hashicorp.com/terraform/$TF_VERSION/terraform_$TF_VERSION_linux_amd64.zip
-  - unzip terraform_$TF_VERSION_linux_amd64.zip -d ./bin
+  - wget https://releases.hashicorp.com/terraform/$(echo $TF_VERSION)/terraform_$(echo $TF_VERSION)_linux_amd64.zip
+  - unzip terraform_$(echo $TF_VERSION)_linux_amd64.zip -d ./bin
 script:
   - ./bin/terraform apply -input=false -var-file vars.tfvars
 env:
