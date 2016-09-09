@@ -2,7 +2,7 @@ variable "hostname" {
   default = ""
 }
 
-resource "template_file" "hostname" {
+data "template_file" "hostname" {
   template = "${file("${path.module}/templates/hostname.yml")}"
 
   vars {

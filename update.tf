@@ -10,7 +10,7 @@ variable "update_server" {
   default = ""
 }
 
-resource "template_file" "update" {
+data "template_file" "update" {
   template = "${file("${path.module}/templates/update.yml")}"
 
   vars {

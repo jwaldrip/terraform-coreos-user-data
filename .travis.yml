@@ -7,5 +7,7 @@ before_script:
 script:
   - ./bin/terraform apply -input=false -var-file vars.tfvars
 env:
-  - TF_VERSION=0.6.16
+  - TF_VERSION=0.7.0
+  - TF_VERSION=0.7.1
+  - TF_VERSION=0.7.2
   - TF_VERSION=0.7.3

@@ -145,7 +145,7 @@ variable "etcd2_log-package-levels" {
 }
 
 // Unit file for etcd2
-resource "template_file" "etcd2_unit" {
+data "template_file" "etcd2_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
@@ -155,7 +155,7 @@ resource "template_file" "etcd2_unit" {
   }
 }
 
-resource "template_file" "etcd2" {
+data "template_file" "etcd2" {
   template = "${file("${path.module}/templates/etcd2.yml")}"
 
   vars {

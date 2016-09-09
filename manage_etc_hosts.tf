@@ -2,7 +2,7 @@ variable "manage_etc_hosts" {
   default = ""
 }
 
-resource "template_file" "manage_etc_hosts" {
+data "template_file" "manage_etc_hosts" {
   template = "${file("${path.module}/templates/manage_etc_hosts.yml")}"
 
   vars {

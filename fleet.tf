@@ -46,7 +46,7 @@ variable "fleet_engine_reconcile_interval" {
   default = ""
 }
 
-resource "template_file" "fleet_unit" {
+data "template_file" "fleet_unit" {
   template = "${file("${path.module}/templates/enabled-unit.yml")}"
 
   vars {
@@ -56,7 +56,7 @@ resource "template_file" "fleet_unit" {
   }
 }
 
-resource "template_file" "fleet" {
+data "template_file" "fleet" {
   template = "${file("${path.module}/templates/fleet.yml")}"
 
   vars {

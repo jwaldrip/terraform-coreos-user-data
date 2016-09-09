@@ -1,3 +1,3 @@
 output "user-data" {
-  value = "${template_file.user-data.rendered}"
+  value = "${data.template_file.user-data.rendered}"
 }

@@ -18,7 +18,7 @@ variable "locksmith_group" {
   default = ""
 }
 
-resource "template_file" "locksmith" {
+data "template_file" "locksmith" {
   template = "${file("${path.module}/templates/locksmith.yml")}"
 
   vars {
