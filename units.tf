@@ -1,6 +1,9 @@
 variable "units" {
   default = ""
 }
+output "units" {
+value = "${var.units}"
+}
 
 // Template for units
 data "template_file" "units" {
