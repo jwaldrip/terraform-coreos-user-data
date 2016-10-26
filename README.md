@@ -80,7 +80,7 @@ etcd2_discovery                     | *none*                      | Discovery UR
 etcd2_discovery-fallback            | *none*                      | Expected behavior (“exit” or “proxy”) when discovery services fails.
 etcd2_discovery-proxy               | *none*                      | HTTP proxy to use for traffic to discovery service.
 etcd2_discovery-srv                 | *none*                      | DNS SRV domain used to bootstrap the cluster.
-etcd2_initial-advertise-peer-url    | `http://localhost:2380,http://localhost:7001` | List of this member’s peer URLs to advertise to the rest of the cluster. These addresses are used for communicating etcd data around the cluster. At least one must be routable to all cluster members. These URLs can contain domain names.
+etcd2_initial-advertise-peer-urls   | `http://localhost:2380,http://localhost:7001` | List of this member’s peer URLs to advertise to the rest of the cluster. These addresses are used for communicating etcd data around the cluster. At least one must be routable to all cluster members. These URLs can contain domain names.
 etcd2_initial-cluster               | `default=http://localhost:2380,default=http://localhost:7001` | Initial cluster configuration for bootstrapping.
 etcd2_initial-cluster-state         | `new`                   | Initial cluster state (“new” or “existing”). Set to new for all members present during initial static or DNS bootstrapping. If this option is set to existing, etcd will attempt to join the existing cluster. If the wrong value is set, etcd will attempt to start but fail safely.
 etcd2_initial-cluster-token         | `etcd-cluster`          | Initial cluster token for the etcd cluster during bootstrap.
